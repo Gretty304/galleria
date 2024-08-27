@@ -1,0 +1,80 @@
+body {
+    background-color: #779dc4; /* Fondo oscuro */
+    color: #ecf0f1; /* Texto claro*/
+    }
+    
+header {
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+}
+
+header h1 {
+    font-size: 2rem; /* Ajusta el tamaño del texto */
+    color: #fff; /* Cambia el color del texto si es necesario */
+    font-family: 'Roboto', sans-serif; /* Aplica la fuente al encabezado */
+}
+
+/* Estilos básicos para la cuadrícula */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
+    grid-template-rows: repeat(4, 1fr); /* 4 filas de igual tamaño */
+    gap: 10px; /* Espacio entre las celdas */
+    width: 80vw; /* Ajusta el ancho de la cuadrícula (antes 100vw) */
+    height: 80vh; /* Ajusta la altura de la cuadrícula (antes 100vh) */
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centra la cuadrícula horizontalmente */
+}
+
+.grid-item {
+    background-color: #f0f0f0; /* Color de fondo para las celdas */
+    display: flex; /* Habilita flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+/* Estilo para las imágenes dentro de las celdas */
+.grid-item img {
+    max-width: 70%; /* Ajusta el ancho máximo de la imagen (antes 75%) */
+    max-height: 70%; /* Ajusta la altura máxima de la imagen (antes 75%) */
+    object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+    cursor: pointer;  /* Cambia el cursor a una manito para indicar que es clicable */
+}
+
+/* Estilo para la imagen que ocupa varias celdas */
+.large {
+    grid-column: 2 / span 2; /* Ocupa las columnas 2 y 3 */
+    grid-row: 2 / span 2; /* Ocupa las filas 2 y 3 */
+}
+
+.lightbox {
+    display: none; /* Oculta el lightbox inicialmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+/* Estilo para el botón de cierre */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 200px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1001; /* Asegura que esté por encima de la imagen */
+}
